@@ -1,0 +1,17 @@
+program Project1;
+
+uses
+  Vcl.Forms,
+  uCadPessoa in 'uCadPessoa.pas' {Form2},
+  ClientClassesPessoa in 'ClientClassesPessoa.pas',
+  ClientModulePessoa in 'ClientModulePessoa.pas' {ClientModule1: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmCadPessoa, frmCadPessoa);
+  Application.CreateForm(TClientModule1, ClientModulePessoa);
+  Application.Run;
+end.

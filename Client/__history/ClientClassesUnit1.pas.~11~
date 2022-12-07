@@ -1,0 +1,163 @@
+//
+// Created by the DataSnap proxy generator.
+// 06/12/2022 09:04:18
+//
+
+unit ClientClassesUnit1;
+
+interface
+
+uses System.JSON, Datasnap.DSProxyRest, Datasnap.DSClientRest, Data.DBXCommon, Data.DBXClient, Data.DBXDataSnap, Data.DBXJSON, Datasnap.DSProxy, System.Classes, System.SysUtils, Data.DB, Data.SqlExpr, Data.DBXDBReaders, Data.DBXCDSReaders, Data.DBXJSONReflect;
+
+type
+  TServerMethods1Client = class(TDSAdminRestClient)
+  private
+    FEchoStringCommand: TDSRestCommand;
+    FReverseStringCommand: TDSRestCommand;
+    FSumCommand: TDSRestCommand;
+    FSetPessoaCommand: TDSRestCommand;
+    FGetProximoCodigoPessoaCommand: TDSRestCommand;
+  public
+    constructor Create(ARestConnection: TDSRestConnection); overload;
+    constructor Create(ARestConnection: TDSRestConnection; AInstanceOwner: Boolean); overload;
+    destructor Destroy; override;
+    function EchoString(Value: string; const ARequestFilter: string = ''): string;
+    function ReverseString(Value: string; const ARequestFilter: string = ''): string;
+    function Sum(A: Double; B: Double; const ARequestFilter: string = ''): Double;
+    procedure SetPessoa(pIdPessoa: string; pNatureza: string; pDocumentio: string; pPrimeiroNome: string; pSegundoNome: string);
+    function GetProximoCodigoPessoa(pSQL: string; const ARequestFilter: string = ''): Integer;
+  end;
+
+const
+  TServerMethods1_EchoString: array [0..1] of TDSRestParameterMetaData =
+  (
+    (Name: 'Value'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: ''; Direction: 4; DBXType: 26; TypeName: 'string')
+  );
+
+  TServerMethods1_ReverseString: array [0..1] of TDSRestParameterMetaData =
+  (
+    (Name: 'Value'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: ''; Direction: 4; DBXType: 26; TypeName: 'string')
+  );
+
+  TServerMethods1_Sum: array [0..2] of TDSRestParameterMetaData =
+  (
+    (Name: 'A'; Direction: 1; DBXType: 7; TypeName: 'Double'),
+    (Name: 'B'; Direction: 1; DBXType: 7; TypeName: 'Double'),
+    (Name: ''; Direction: 4; DBXType: 7; TypeName: 'Double')
+  );
+
+  TServerMethods1_SetPessoa: array [0..4] of TDSRestParameterMetaData =
+  (
+    (Name: 'pIdPessoa'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'pNatureza'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'pDocumentio'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'pPrimeiroNome'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'pSegundoNome'; Direction: 1; DBXType: 26; TypeName: 'string')
+  );
+
+  TServerMethods1_GetProximoCodigoPessoa: array [0..1] of TDSRestParameterMetaData =
+  (
+    (Name: 'pSQL'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: ''; Direction: 4; DBXType: 6; TypeName: 'Integer')
+  );
+
+implementation
+
+function TServerMethods1Client.EchoString(Value: string; const ARequestFilter: string): string;
+begin
+  if FEchoStringCommand = nil then
+  begin
+    FEchoStringCommand := FConnection.CreateCommand;
+    FEchoStringCommand.RequestType := 'GET';
+    FEchoStringCommand.Text := 'TServerMethods1.EchoString';
+    FEchoStringCommand.Prepare(TServerMethods1_EchoString);
+  end;
+  FEchoStringCommand.Parameters[0].Value.SetWideString(Value);
+  FEchoStringCommand.Execute(ARequestFilter);
+  Result := FEchoStringCommand.Parameters[1].Value.GetWideString;
+end;
+
+function TServerMethods1Client.ReverseString(Value: string; const ARequestFilter: string): string;
+begin
+  if FReverseStringCommand = nil then
+  begin
+    FReverseStringCommand := FConnection.CreateCommand;
+    FReverseStringCommand.RequestType := 'GET';
+    FReverseStringCommand.Text := 'TServerMethods1.ReverseString';
+    FReverseStringCommand.Prepare(TServerMethods1_ReverseString);
+  end;
+  FReverseStringCommand.Parameters[0].Value.SetWideString(Value);
+  FReverseStringCommand.Execute(ARequestFilter);
+  Result := FReverseStringCommand.Parameters[1].Value.GetWideString;
+end;
+
+function TServerMethods1Client.Sum(A: Double; B: Double; const ARequestFilter: string): Double;
+begin
+  if FSumCommand = nil then
+  begin
+    FSumCommand := FConnection.CreateCommand;
+    FSumCommand.RequestType := 'GET';
+    FSumCommand.Text := 'TServerMethods1.Sum';
+    FSumCommand.Prepare(TServerMethods1_Sum);
+  end;
+  FSumCommand.Parameters[0].Value.SetDouble(A);
+  FSumCommand.Parameters[1].Value.SetDouble(B);
+  FSumCommand.Execute(ARequestFilter);
+  Result := FSumCommand.Parameters[2].Value.GetDouble;
+end;
+
+procedure TServerMethods1Client.SetPessoa(pIdPessoa: string; pNatureza: string; pDocumentio: string; pPrimeiroNome: string; pSegundoNome: string);
+begin
+  if FSetPessoaCommand = nil then
+  begin
+    FSetPessoaCommand := FConnection.CreateCommand;
+    FSetPessoaCommand.RequestType := 'GET';
+    FSetPessoaCommand.Text := 'TServerMethods1.SetPessoa';
+    FSetPessoaCommand.Prepare(TServerMethods1_SetPessoa);
+  end;
+  FSetPessoaCommand.Parameters[0].Value.SetWideString(pIdPessoa);
+  FSetPessoaCommand.Parameters[1].Value.SetWideString(pNatureza);
+  FSetPessoaCommand.Parameters[2].Value.SetWideString(pDocumentio);
+  FSetPessoaCommand.Parameters[3].Value.SetWideString(pPrimeiroNome);
+  FSetPessoaCommand.Parameters[4].Value.SetWideString(pSegundoNome);
+  FSetPessoaCommand.Execute;
+end;
+
+function TServerMethods1Client.GetProximoCodigoPessoa(pSQL: string; const ARequestFilter: string): Integer;
+begin
+  if FGetProximoCodigoPessoaCommand = nil then
+  begin
+    FGetProximoCodigoPessoaCommand := FConnection.CreateCommand;
+    FGetProximoCodigoPessoaCommand.RequestType := 'GET';
+    FGetProximoCodigoPessoaCommand.Text := 'TServerMethods1.GetProximoCodigoPessoa';
+    FGetProximoCodigoPessoaCommand.Prepare(TServerMethods1_GetProximoCodigoPessoa);
+  end;
+  FGetProximoCodigoPessoaCommand.Parameters[0].Value.SetWideString(pSQL);
+  FGetProximoCodigoPessoaCommand.Execute(ARequestFilter);
+  Result := FGetProximoCodigoPessoaCommand.Parameters[1].Value.GetInt32;
+end;
+
+constructor TServerMethods1Client.Create(ARestConnection: TDSRestConnection);
+begin
+  inherited Create(ARestConnection);
+end;
+
+constructor TServerMethods1Client.Create(ARestConnection: TDSRestConnection; AInstanceOwner: Boolean);
+begin
+  inherited Create(ARestConnection, AInstanceOwner);
+end;
+
+destructor TServerMethods1Client.Destroy;
+begin
+  FEchoStringCommand.DisposeOf;
+  FReverseStringCommand.DisposeOf;
+  FSumCommand.DisposeOf;
+  FSetPessoaCommand.DisposeOf;
+  FGetProximoCodigoPessoaCommand.DisposeOf;
+  inherited;
+end;
+
+end.
+

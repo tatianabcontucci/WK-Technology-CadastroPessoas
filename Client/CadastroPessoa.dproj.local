@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/10/31 23:04:24.000.711,=C:\Users\worker\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/04 12:54:14.000.403,=C:\Users\worker\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2022/12/04 12:54:16.000.029,=C:\Users\worker\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+    <Transaction>2022/12/04 13:10:33.000.945,=C:\Users\worker\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/04 13:10:34.000.110,=C:\Users\worker\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+    <Transaction>2022/12/04 13:10:34.000.028,=C:\Users\worker\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2022/12/04 21:36:51.000.413,=C:\Users\worker\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/04 21:40:49.271,=C:\Users\worker\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/12/04 21:41:04.902,C:\Tatiana\Client\uCadPEssoa.pas=C:\Users\worker\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/12/04 21:41:04.902,C:\Tatiana\Client\uCadPEssoa.dfm=C:\Users\worker\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2022/12/04 21:41:10.893,C:\Tatiana\Client\CadastroPessoa.dproj=C:\Users\worker\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
